@@ -13,6 +13,12 @@ y entretenimiento de la primera parte del anime, en español.
 [![License](https://img.shields.io/badge/License-Educational-orange)](#-licencia)
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)]()
 
+<br>
+
+<img src="media/demo.gif" alt="Demo en vivo de JoJoFanHub" width="280">
+
+### 🎬 Demo en vivo — la app funcionando de inicio a fin
+
 </div>
 
 ---
@@ -28,7 +34,6 @@ y entretenimiento de la primera parte del anime, en español.
 - [Instalación y ejecución](#-instalación-y-ejecución)
 - [Estructura del proyecto](#-estructura-del-proyecto)
 - [Screenshots](#-screenshots)
-- [Demo en vivo](#-demo-en-vivo)
 - [Roadmap](#-roadmap)
 - [Autor](#-autor)
 - [Licencia](#-licencia)
@@ -177,16 +182,6 @@ lib/
     ├── juego_screen.dart            # Batalla por turnos
     └── contratame_screen.dart       # Perfil de contacto animado
 ```
-
-## 🎬 Demo en vivo
-
-<div align="center">
-
-[![Ver demo](https://img.shields.io/badge/▶%20VER-DEMO%20EN%20VIVO-D4AF37?style=for-the-badge&labelColor=0D0D1A)](media/demo.mp4)
-
-*Clic para ver la app funcionando (recorrido completo: portada, batalla y videos)*
-
-</div>
 
 ## 📸 Screenshots
 
