@@ -258,7 +258,7 @@ flowchart LR
 <div align="center">
 
 ### **Yeison Rojas Henriquez**
-*Desarrollador Móvil* — Matrícula 20241822
+*Desarrollador Móvil*
 
 [![GitHub](https://img.shields.io/badge/GitHub-yeisondev001-181717?logo=github)](https://github.com/yeisondev001)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Yeison%20Rojas-0A66C2?logo=linkedin)](https://www.linkedin.com/in/yeison-rojas-henriquez)
