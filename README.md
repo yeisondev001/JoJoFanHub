@@ -1,4 +1,4 @@
-# ⚔️ Phantom Blood Battle
+# ⚔️ JoJoFanHub
 
 Fan app en **Flutter** de *JoJo's Bizarre Adventure — Phantom Blood* (Parte 1), que reúne en un solo lugar información, multimedia y un minijuego interactivo, todo en español.
 
@@ -8,7 +8,7 @@ Fan app en **Flutter** de *JoJo's Bizarre Adventure — Phantom Blood* (Parte 1)
 
 ## 📱 Qué problema resuelve
 
-La información del anime está dispersa en wikis, videos y foros en inglés. **Phantom Blood Battle** la centraliza en una experiencia móvil en español:
+La información del anime está dispersa en wikis, videos y foros en inglés. **JoJoFanHub** la centraliza en una experiencia móvil en español:
 
 - 🎭 **Elenco completo**: personajes con biografía, rol y actores de doblaje (JP/EN), con transiciones Hero.
 - 🎬 **Momentos épicos**: las escenas clave de la historia con su propio reproductor de video (YouTube con fallback a MP4).
@@ -58,7 +58,7 @@ lib/
 ## 🚀 Cómo ejecutar
 
 ```bash
-git clone https://github.com/yeisondev001/PhantomBloodBattle.git
+git clone https://github.com/yeisondev001/JoJoFanHub.git
 cd PhantomBloodBattle
 flutter pub get
 flutter run
