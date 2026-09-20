@@ -202,29 +202,41 @@ flowchart TD
     JUEGO --> INTRO["Intro Dio"] --> SEL["Selección<br/>Jonathan / Zeppeli"] --> BATALLA["Batalla por<br/>turnos"] --> RESULT{"🏆 Victoria / 💀 Derrota"}
 ```
 
-### 🌳 Árbol de carpetas
+### 🌳 Estructura de carpetas y archivos
 
-```text
-JoJoFanHub/
-│
-├── 📄 main.dart ──────────────── 🧭 Shell de navegación · opening · volumen
-│
-├── 📊 data/
-│   └── 🗃️ app_data.dart ──────── 📦 Contenido central (anime, elenco, momentos)
-│
-├── 🧱 models/
-│   ├── 👤 character.dart ──────── Modelo del personaje
-│   └── 🎞️ moment.dart ─────────── Modelo del momento épico
-│
-└── 🖥️ screens/
-    ├── 🏠 portada_screen.dart ──── Hub con accesos directos
-    ├── 👥 personajes_screen.dart ─ Grid 2×2 con transiciones Hero
-    ├── 🎭 personaje_detalle_screen.dart ── Detalle colapsable
-    ├── 📸 momentos_screen.dart ─── Tarjetas de momentos épicos
-    ├── ▶️ momento_detalle_screen.dart ──── Video YouTube/MP4
-    ├── ℹ️ acerca_screen.dart ────── Stats e info del anime
-    ├── ⚔️ juego_screen.dart ────── RPG por turnos completo
-    └── 📇 contratame_screen.dart ── Perfil animado de contacto
+```mermaid
+flowchart LR
+    ROOT["📁 JoJoFanHub"]
+
+    ROOT --> LIB["📁 lib/"]
+
+    LIB --> MAIN["📄 main.dart<br/>🧭 Shell de navegación · opening · volumen"]
+
+    LIB --> DATA["📊 data/"]
+    DATA --> AD["🗃️ app_data.dart<br/>📦 Contenido central del anime"]
+
+    LIB --> MODELS["🧱 models/"]
+    MODELS --> CH["👤 character.dart<br/>Modelo del personaje"]
+    MODELS --> MO["🎞️ moment.dart<br/>Modelo del momento épico"]
+
+    LIB --> SCREENS["🖥️ screens/"]
+    SCREENS --> S1["🏠 portada_screen.dart<br/>Hub de accesos directos"]
+    SCREENS --> S2["👥 personajes_screen.dart<br/>Grid 2×2 con Hero"]
+    SCREENS --> S3["🎭 personaje_detalle_screen.dart<br/>Detalle colapsable"]
+    SCREENS --> S4["📸 momentos_screen.dart<br/>Tarjetas de momentos"]
+    SCREENS --> S5["▶️ momento_detalle_screen.dart<br/>Video YouTube/MP4"]
+    SCREENS --> S6["ℹ️ acerca_screen.dart<br/>Stats e info del anime"]
+    SCREENS --> S7["⚔️ juego_screen.dart<br/>RPG por turnos completo"]
+    SCREENS --> S8["📇 contratame_screen.dart<br/>Perfil animado de contacto"]
+
+    ROOT --> ASSETS["📁 assets/"]
+    ASSETS --> IMG["🖼️ images/ (19 archivos)<br/>Personajes · sprites · fondos"]
+    ASSETS --> VID["📹 videos/"]
+
+    ROOT --> MEDIA["📁 media/<br/>🎬 demo.gif · demo.mp4"]
+    ROOT --> ANDROID["📁 android/"]
+    ROOT --> WEB["📁 web/"]
+    ROOT --> TEST["📁 test/"]
 ```
 
 ### 🔧 Capas técnicas
