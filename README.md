@@ -25,17 +25,12 @@ y entretenimiento de la primera parte del anime, en español.
 
 ## 📑 Tabla de contenido
 
-- [Sobre el proyecto](#-sobre-el-proyecto)
-- [Problema que resuelve](#-problema-que-resuelve)
-- [Características](#-características)
-- [Arquitectura](#-arquitectura)
-- [Tecnologías y dependencias](#-tecnologías-y-dependencias)
-- [Características técnicas destacadas](#-características-técnicas-destacadas)
-- [Instalación y ejecución](#-instalación-y-ejecución)
-- [Estructura del proyecto](#-estructura-del-proyecto)
-- [Roadmap](#-roadmap)
-- [Autor](#-autor)
-- [Licencia](#-licencia)
+| | | |
+|:---|:---|:---|
+| 🎯 [Sobre el proyecto](#-sobre-el-proyecto) | 🧩 [Problema que resuelve](#-problema-que-resuelve) | ✨ [Características](#-características) |
+| 🏗️ [Arquitectura](#️%EF%B8%8F-arquitectura) | 🛠️ [Tecnologías](#-tecnologías-y-dependencias) | 💡 [Detalles técnicos](#-características-técnicas-destacadas) |
+| 🚀 [Instalación](#-instalación-y-ejecución) | 📂 [Estructura](#-estructura-del-proyecto) | 🗺️ [Roadmap](#-roadmap) |
+| 👤 [Autor](#-autor) | 📄 [Licencia](#-licencia) | |
 
 ---
 
