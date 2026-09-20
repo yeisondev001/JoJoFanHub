@@ -33,7 +33,6 @@ y entretenimiento de la primera parte del anime, en español.
 - [Características técnicas destacadas](#-características-técnicas-destacadas)
 - [Instalación y ejecución](#-instalación-y-ejecución)
 - [Estructura del proyecto](#-estructura-del-proyecto)
-- [Screenshots](#-screenshots)
 - [Roadmap](#-roadmap)
 - [Autor](#-autor)
 - [Licencia](#-licencia)
@@ -94,12 +93,32 @@ contacto directo que convierte la app en una **pieza de portafolio funcional**.
 Arquitectura por capas con separación de responsabilidades:
 
 ```mermaid
-flowchart TD
-    A[main.dart<br/>Shell de navegación] --> B[Screens / UI]
-    A --> C[data/app_data.dart<br/>Fuente de datos]
-    A --> D[models/<br/>Character · Moment]
-    B --> D
-    C --> D
+flowchart TB
+    subgraph PRESENTACION["🎨 Capa de Presentación"]
+        direction LR
+        M["🧭 main.dart<br/>AppBar · Volumen · Swipe<br/>CurvedNavigationBar"]
+        S["🖥️ screens/ (8 pantallas)<br/>Portada · Personajes · Momentos<br/>Acerca · Juego · Contrátame"]
+    end
+
+    subgraph DOMINIO["🧱 Capa de Datos"]
+        direction LR
+        D["🗃️ data/app_data.dart<br/>Única fuente de contenido"]
+        MD["📐 models/<br/>Character · Moment"]
+    end
+
+    subgraph EXTERNO["🌐 Servicios externos"]
+        direction LR
+        YT["📺 YouTube IFrame"]
+        MP4["🎬 Chewie / VideoPlayer"]
+        URL["🔗 url_launcher"]
+    end
+
+    M --> S
+    S --> D
+    D --> MD
+    S --> YT
+    S --> MP4
+    S --> URL
 ```
 
 **Patrón aplicado:** separación UI / datos / modelos, con navegación centralizada
@@ -164,36 +183,58 @@ flutter test       # Pruebas unitarias y de widgets
 
 ## 📂 Estructura del proyecto
 
+### 🗺️ Mapa de navegación de la app
+
+```mermaid
+flowchart TD
+    SHELL["📱 MainScreen<br/>Shell + IndexedStack"]
+
+    SHELL -->|"🏠 Tab 0"| PORTADA["🏠 Portada<br/>Hub de exploración"]
+    SHELL -->|"👥 Tab 1"| PERSONAJES["👥 Personajes<br/>Grid con Hero"]
+    SHELL -->|"📸 Tab 2"| MOMENTOS["📸 Momentos<br/>Lista épica"]
+    SHELL -->|"ℹ️ Tab 3"| ACERCA["ℹ️ Acerca de<br/>Info del anime"]
+    SHELL -->|"⚔️ Tab 4"| JUEGO["⚔️ Juego<br/>Batalla vs Dio"]
+    SHELL -->|"📇 Tab 5"| CONTRATAME["📇 Contrátame<br/>Contacto directo"]
+
+    PORTADA -.->|"onTap"| SHELL
+    PERSONAJES ==>|push| DETALLE_P["🎭 Detalle Personaje<br/>SliverAppBar colapsable"]
+    MOMENTOS ==>|push| DETALLE_M["▶️ Detalle Momento<br/>Reproductor de video"]
+    JUEGO --> INTRO["Intro Dio"] --> SEL["Selección<br/>Jonathan / Zeppeli"] --> BATALLA["Batalla por<br/>turnos"] --> RESULT{"🏆 Victoria / 💀 Derrota"}
 ```
-lib/
-├── main.dart                        # Shell de navegación, opening + volumen
-├── data/
-│   └── app_data.dart                # Datos del anime y contenido
-├── models/
-│   ├── character.dart               # Modelo de personaje
-│   └── moment.dart                  # Modelo de momento épico
-└── screens/
-    ├── portada_screen.dart          # Hub de exploración
-    ├── personajes_screen.dart       # Grid de personajes
-    ├── personaje_detalle_screen.dart# Detalle SliverAppBar + Hero
-    ├── momentos_screen.dart         # Lista de momentos
-    ├── momento_detalle_screen.dart  # Detalle + reproductor de video
-    ├── acerca_screen.dart           # Información del anime
-    ├── juego_screen.dart            # Batalla por turnos
-    └── contratame_screen.dart       # Perfil de contacto animado
+
+### 🌳 Árbol de carpetas
+
+```text
+JoJoFanHub/
+│
+├── 📄 main.dart ──────────────── 🧭 Shell de navegación · opening · volumen
+│
+├── 📊 data/
+│   └── 🗃️ app_data.dart ──────── 📦 Contenido central (anime, elenco, momentos)
+│
+├── 🧱 models/
+│   ├── 👤 character.dart ──────── Modelo del personaje
+│   └── 🎞️ moment.dart ─────────── Modelo del momento épico
+│
+└── 🖥️ screens/
+    ├── 🏠 portada_screen.dart ──── Hub con accesos directos
+    ├── 👥 personajes_screen.dart ─ Grid 2×2 con transiciones Hero
+    ├── 🎭 personaje_detalle_screen.dart ── Detalle colapsable
+    ├── 📸 momentos_screen.dart ─── Tarjetas de momentos épicos
+    ├── ▶️ momento_detalle_screen.dart ──── Video YouTube/MP4
+    ├── ℹ️ acerca_screen.dart ────── Stats e info del anime
+    ├── ⚔️ juego_screen.dart ────── RPG por turnos completo
+    └── 📇 contratame_screen.dart ── Perfil animado de contacto
 ```
 
-## 📸 Screenshots
+### 🔧 Capas técnicas
 
-<div align="center">
-
-| Portada | Batalla contra Dio | Personajes |
-|:---:|:---:|:---:|
-| ![Portada](screenshots/portada.png) | ![Batalla](screenshots/batalla.png) | ![Personajes](screenshots/personajes.png) |
-
-</div>
-
-> 📷 *Agrega las capturas en una carpeta `screenshots/` en la raíz del repositorio.*
+| Capa | Carpeta | Responsabilidad |
+|:---:|---|---|
+| 🎨 **UI** | `screens/` | 8 pantallas: listas, grids, detalle y juego |
+| 🧱 **Modelos** | `models/` | Entidades inmutables `Character` y `Moment` |
+| 🗃️ **Datos** | `data/` | Única fuente de verdad del contenido |
+| 📦 **Assets** | `assets/` | 19 imágenes (personajes, sprites de batalla, fondos) |
 
 ## 🗺️ Roadmap
 
